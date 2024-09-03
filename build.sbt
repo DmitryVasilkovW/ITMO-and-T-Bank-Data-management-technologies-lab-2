@@ -1,11 +1,11 @@
 import Dependencies._
 
-ThisBuild / scalaVersion     := "2.13.10"
+ThisBuild / scalaVersion     := "3.3.1"
 ThisBuild / version          := "0.1.0-SNAPSHOT"
 
 lazy val root = (project in file("."))
   .settings(
-    name := "converter",
+    name := "hw2",
     libraryDependencies += scalatest,
     Test / javaOptions ++= Seq("-Xss1M"),
     Test / fork := true
