@@ -4,6 +4,7 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 class ParquetSpec extends AnyFlatSpec with Matchers {
+
   private val economy1 = Building.Economy(10, 25, 4, 2)
   private val economy2 = Building.Economy(23, 50, 3, 1)
   private val premium1 = Building.Premium(10, 25, 4, 2)
@@ -18,4 +19,5 @@ class ParquetSpec extends AnyFlatSpec with Matchers {
     Parquet.calculate(premium1) shouldEqual 351
     Parquet.calculate(premium2) shouldEqual 9856
   }
+
 }

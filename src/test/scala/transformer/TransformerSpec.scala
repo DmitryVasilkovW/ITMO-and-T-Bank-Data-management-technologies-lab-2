@@ -4,8 +4,11 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 class TransformerSpec extends AnyFlatSpec with Matchers {
+
   "duplicate" should "duplicate string at the end of line" in {
-    Transformers.duplicate("Everyone get in here ") shouldEqual "Everyone get in here Everyone get in here "
+    Transformers.duplicate(
+      "Everyone get in here "
+    ) shouldEqual "Everyone get in here Everyone get in here "
   }
 
   "divide" should "divide the line by half and return first half as the result" in {
@@ -22,4 +25,5 @@ class TransformerSpec extends AnyFlatSpec with Matchers {
     closure(Transformers.revert) shouldEqual "neve ro ddo reveN"
     closure(_ + "!") shouldEqual "Never odd or even!"
   }
+
 }

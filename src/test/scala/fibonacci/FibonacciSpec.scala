@@ -5,6 +5,7 @@ import org.scalatest.matchers.should.Matchers
 import fibonacci.Fibonacci._
 
 class FibonacciSpec extends AnyFlatSpec with Matchers {
+
   "fibonacci" should "return correct number for a small limit" in {
     val expected = BigInt(55)
     fibonacci(10) shouldEqual expected
@@ -16,4 +17,5 @@ class FibonacciSpec extends AnyFlatSpec with Matchers {
     )
     fibonacci(10000) shouldEqual expected
   }
+
 }
