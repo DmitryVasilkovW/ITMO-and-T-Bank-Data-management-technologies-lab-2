@@ -1,5 +1,5 @@
-import sbt._
+import sbt.*
 
 object Dependencies {
-    val scalatest = "org.scalatest" %% "scalatest" % "3.2.18" % "test"
+    val scalatest = "org.scalatest" %% "scalatest" % "3.2.19" % "test"
 }
