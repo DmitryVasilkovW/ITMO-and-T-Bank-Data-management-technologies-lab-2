@@ -1,5 +1,7 @@
 package calculator
 
+import calculator.myExceptions.{InvalidDimensionException, UnknownBuildingTypeException}
+
 sealed trait Building(length: Int, width: Int, height: Int, floorNumber: Int)
 
 object Building {
@@ -17,15 +19,15 @@ object Building {
     height: Int,
     floorNumber: Int
   ): Building = {
-    require(length > 0, "Length must be greater than 0")
-    require(width > 0, "Width must be greater than 0")
-    require(height > 0, "Height must be greater than 0")
-    require(floorNumber > 0, "Floor number must be greater than 0")
+    if (length <= 0) throw InvalidDimensionException("length", length)
+    if (width <= 0) throw InvalidDimensionException("width", width)
+    if (height <= 0) throw InvalidDimensionException("height", height)
+    if (floorNumber <= 0) throw InvalidDimensionException("floorNumber", floorNumber)
 
     buildingType.toLowerCase match {
       case "economy" => Economy(length, width, height, floorNumber)
       case "premium" => Premium(length, width, height, floorNumber)
-      case _         => throw new IllegalArgumentException("Unknown building type")
+      case _         => throw UnknownBuildingTypeException(buildingType)
     }
   }
 
